@@ -27,7 +27,9 @@ BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_ba
 			ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 
 OBJ = $(SRC:.c=.o)
+
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
+
 LIBC = ar rcs
 
 $(NAME): $(OBJ)
@@ -43,6 +45,9 @@ bonus: $(BONUS_OBJ)
 
 bonus_%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+
+	# $< represents the prerequisite (source file)
+	# $@ represents the target (object file)
 
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
