@@ -28,14 +28,15 @@ BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_ba
 
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
+LIBC = ar rcs
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	$(LIBC) $(NAME) $(OBJ)
 
-all: $(NAME) $(BONUS_OBJ)
+all: $(NAME) $(BONUS_OBJ) $(LIBC)
 	
 bonus: $(BONUS_OBJ)
-	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+	$(LIBC) $(NAME) $(BONUS_OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
