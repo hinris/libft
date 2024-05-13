@@ -6,7 +6,7 @@
 /*   By: anrodrig <anrodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:08:05 by anrodrig          #+#    #+#             */
-/*   Updated: 2024/04/18 19:06:30 by anrodrig         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:08:48 by anrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const unsigned char		*s;
 	unsigned char			*d;
 
-	s = (unsigned char *)src;
+	s = (const unsigned char *)src;
 	d = (unsigned char *)dest;
-	if (!dest && !src)
-		return (dest);
 	if (dest < src)
 		return (ft_memcpy(dest, src, n));
 	while (n--)

@@ -6,7 +6,7 @@
 /*   By: anrodrig <anrodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:02:11 by anrodrig          #+#    #+#             */
-/*   Updated: 2024/04/24 18:09:18 by anrodrig         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:07:00 by anrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*dest;
 
 	i = 0;
+	if (!s || !f)
+		return (NULL);
 	dest = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!dest || !s)
+	if (!dest)
 		return (NULL);
 	while (*s)
 	{

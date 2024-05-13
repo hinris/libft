@@ -6,7 +6,7 @@
 /*   By: anrodrig <anrodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:07:36 by anrodrig          #+#    #+#             */
-/*   Updated: 2024/04/15 18:57:27 by anrodrig         ###   ########.fr       */
+/*   Updated: 2024/05/13 19:35:00 by anrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*p;
+	unsigned char	*p;
 
 	p = s;
 	while (n--)

@@ -6,7 +6,7 @@
 /*   By: anrodrig <anrodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:09:20 by anrodrig          #+#    #+#             */
-/*   Updated: 2024/04/18 22:46:37 by anrodrig         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:49:23 by anrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,7 @@ char	*ft_strchr(const char *s, int c)
 
 	i = 0;
 	if (c == '\0')
-	{
-		while (s[i] != '\0')
-			i++;
-		return ((char *)&s[i]);
-	}
+		return ((char *)&s[ft_strlen(s)]);
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)

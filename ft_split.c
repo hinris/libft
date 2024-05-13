@@ -6,7 +6,7 @@
 /*   By: anrodrig <anrodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:05:48 by anrodrig          #+#    #+#             */
-/*   Updated: 2024/04/26 13:50:00 by anrodrig         ###   ########.fr       */
+/*   Updated: 2024/05/13 21:27:43 by anrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	count_words(const char *s, char c)
 	int	words;
 
 	words = 0;
+	if (!c)
+		return (words + 1);
 	while (*s)
 	{
 		while (*s == c)
@@ -45,8 +47,8 @@ static int	ft_split2(char **list, char const *s, char c)
 				len = ft_strlen(s);
 			else
 				len = ft_strchr(s, c) - s;
-			list[i++] = ft_substr(s, 0, len);
-			if (!*list)
+			list[i] = ft_substr(s, 0, len);
+			if (!list[i++])
 				return (0);
 			s += len;
 		}
@@ -60,10 +62,12 @@ char	**ft_split(char const *s, char c)
 	int		words;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	words = count_words(s, c);
 	i = 0;
 	list = ft_calloc((words + 1), sizeof(char *));
-	if (!list || !s)
+	if (!list)
 		return (NULL);
 	if (!ft_split2(list, s, c))
 	{
@@ -76,3 +80,29 @@ char	**ft_split(char const *s, char c)
 	}
 	return (list);
 }
+/* int main(void)
+{
+	char *str = "test without seps";
+	char **test;
+
+	test = ft_split(str, 0);
+	for (int i = 0 ; test[i]; i++)
+	{
+		printf("%s\n", test[i]);
+		free(test[i]);
+	}
+	free(test);
+	char *str2 = "estou farto do libft fr fr";
+	char **test2;
+	char *test_words = "i have exactly 6 words :)";
+
+	printf("should be 6: %d\n", count_words(test_words, ' '));
+	test2 = ft_split(str2, ' ');
+	for (int i = 0 ; test2[i]; i++)
+	{
+		printf("%s\n", test2[i]);
+		free(test2[i]);
+	}
+	free(test2);
+	return 0;
+} */

@@ -6,7 +6,7 @@
 /*   By: anrodrig <anrodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:13:08 by anrodrig          #+#    #+#             */
-/*   Updated: 2024/04/26 13:44:16 by anrodrig         ###   ########.fr       */
+/*   Updated: 2024/05/13 19:36:05 by anrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	total_size = nmemb * size;
 	if (!total_size)
-		return (ft_strdup(""));
+		return (NULL);
 	if (nmemb > total_size || size > total_size)
 		return (NULL);
 	p = malloc(nmemb * size);

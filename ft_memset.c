@@ -6,7 +6,7 @@
 /*   By: anrodrig <anrodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:07:26 by anrodrig          #+#    #+#             */
-/*   Updated: 2024/04/18 20:57:05 by anrodrig         ###   ########.fr       */
+/*   Updated: 2024/05/13 21:27:30 by anrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	p = s;
 	uc = (unsigned char)c;
 	while (n--)
-	{
 		*p++ = uc;
-	}
 	return (s);
 }
 
@@ -35,5 +33,4 @@ void	*ft_memset(void *s, int c, size_t n)
 	puts(str);
 
 	return 0;
-}
- */
+} */

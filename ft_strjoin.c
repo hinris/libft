@@ -6,7 +6,7 @@
 /*   By: anrodrig <anrodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:46:20 by anrodrig          #+#    #+#             */
-/*   Updated: 2024/04/26 16:51:39 by anrodrig         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:03:32 by anrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len;
 	size_t	i;
 
+	if (!s1 || !s2)
+		return (NULL);
 	i = 0;
 	len = ft_strlen(s1) + ft_strlen(s2);
 	str1 = (char *)s1;
